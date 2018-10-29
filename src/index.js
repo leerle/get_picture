@@ -3,22 +3,11 @@ const inquirer = require('inquirer');
 const chalk = require('chalk');
 const pkg = require('../package.json');
 const qs = require('./helper/questions');
-const App = require('./app');
 const Clean = require('./clean');
 const ImgMin = require('./imgMin');
 
 program
     .version(pkg.version, '-v, --version');
-
-program
-    .command('search')
-    .alias('s')
-    .description('Get search pictures what you want.')
-    .action(async () => {
-        const answers = await inquirer.prompt(qs.startQuestions);
-        const app = new App(answers);
-        await app.start();
-    });
 
 program
     .command('clean')
