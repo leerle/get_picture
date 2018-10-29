@@ -9,7 +9,8 @@ function setKey(key) {
 }
 
 async function validate(key) {
-    console.log(chalk.green('正在认证tinyPng的key...'));
+   // console.log(chalk.green('正在认证tinyPng的key...'));
+    console.log("dssd")
     setKey(key);
     return new Promise(resolve => {
         tinify.validate((err) => {
